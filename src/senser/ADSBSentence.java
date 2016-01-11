@@ -76,7 +76,7 @@ public class ADSBSentence implements ADSBSentenceInterface
 		String[] times = this.getTimestamp().split("\\."); 
 
 		//Define date format
-		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd.MM.yyyy, HH:mm:ss.SSS");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd.MM.yyyy, HH:mm:ss");
 		//Create a DAte object
 		Date date = new Date();
 		//Create time string

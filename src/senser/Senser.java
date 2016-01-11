@@ -25,7 +25,7 @@ public class Senser extends Observable implements Runnable
 		
 		//Create factory and display object
 		ADSBSentenceFactory factory = new ADSBSentenceFactory();
-		// ADSBSentenceDisplay display = new ADSBSentenceDisplay();
+		ADSBSentenceDisplay display = new ADSBSentenceDisplay();
 		
 		while (true)
 		{
@@ -34,7 +34,7 @@ public class Senser extends Observable implements Runnable
 			if (sentence != null)
 			{
 				//Display the sentence
-				//display.display(sentence);
+				display.display(sentence);
 				
 				//Notify all observers
 				setChanged();

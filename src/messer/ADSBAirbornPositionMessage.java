@@ -19,7 +19,8 @@ public class ADSBAirbornPositionMessage extends ADSBMessage implements ADSBAirbo
 
     }
 
-    public ADSBAirbornPositionMessage(int surveillanceStatus, int nicSupplement, int altitude, int timeFlag, int cprFormate, int cprLongitude, int cprLatitude) {
+    public ADSBAirbornPositionMessage(String timestamp, String icao, int type, int downlinkFormate, int capability, int surveillanceStatus, int nicSupplement, int altitude, int timeFlag, int cprFormate, int cprLongitude, int cprLatitude) {
+        super(timestamp, icao, type, downlinkFormate, capability);
         this.surveillanceStatus = surveillanceStatus;
         this.nicSupplement = nicSupplement;
         this.altitude = altitude;
@@ -68,5 +69,13 @@ public class ADSBAirbornPositionMessage extends ADSBMessage implements ADSBAirbo
         System.out.print(getIcao() + ": ADSB Position Message\nSurveillance Status: "+ getSurveillanceStatus() + "\nNic Supplement: " +
         getNicSupplement() + "\nAltitude: " + getAltitude() + "\nTimeFlag: " + getTimeFlag() + "\nCPR Formate: " + getCprFormat() +
         "\nCPR Longitude: " + getCprLogitude() + "\nCPR Latitude: " + getCprLatitude() + "\n\n");
+    }
+
+    @Override
+    public String toString() {
+        String s = "Surveillance Status: "+ getSurveillanceStatus() + "\nNic Supplement: " +
+                getNicSupplement() + "\nAltitude: " + getAltitude() + "\nTimeFlag: " + getTimeFlag() + "\nCPR Formate: " + getCprFormat() +
+                "\nCPR Longitude: " + getCprLogitude() + "\nCPR Latitude: " + getCprLatitude() +  "\n";
+        return s;
     }
 }

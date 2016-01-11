@@ -6,18 +6,19 @@ import messer.interfaces.ADSBMessageInterface;
  * Created by Fabian on 09.11.2015.
  */
 public class ADSBMessage implements ADSBMessageInterface {
+    private String timestamp;
     private String icao;
     private int type;
     private int downlinkFormate;
     private int capability;
     private int payload;
 
-    public ADSBMessage (String icao, int type, int downlinkFormate, int capability, int payload){
+    public ADSBMessage (String timestamp, String icao, int type, int downlinkFormate, int capability){
+        this.timestamp = timestamp;
         this.icao = icao;
         this.type = type;
         this.downlinkFormate = downlinkFormate;
         this.capability = capability;
-        this.payload = payload;
     }
 
     public ADSBMessage () {
@@ -26,7 +27,7 @@ public class ADSBMessage implements ADSBMessageInterface {
 
     @Override
     public String getTimestamp() {
-        return null;
+        return timestamp;
     }
 
     @Override
